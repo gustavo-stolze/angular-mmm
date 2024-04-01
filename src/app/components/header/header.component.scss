@@ -1,0 +1,21 @@
+@import "../../../styles/variables";
+
+.header {
+  background-color: $secondaryBgColor;
+  padding: 35px;
+  text-align: center;
+  &__title {
+    color: $secondaryColor;
+    font-family: $headerFont;
+    font-size: 50px;
+    padding-bottom: 45px;
+  }
+}
+
+@media (max-width: 490px) {
+  .header {
+    &__title {
+      font-size: 40px;
+    }
+  }
+}

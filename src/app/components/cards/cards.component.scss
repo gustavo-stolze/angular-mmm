@@ -1,0 +1,49 @@
+@import "../../../styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-top: -55px; // MDS GENIAL
+}
+
+.card {
+  background-color: $tertiaryBgColor;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  &__header {
+    color: $primaryColor;
+    position: relative;
+    margin-left: 25px;
+    padding-top: 15px;
+    font-size: 22px;
+  }
+
+  &__value {
+    &--color--green {
+      color: $secondaryColor;
+    }
+    &--color--red {
+      color: $tertiaryColor;
+    }
+    position: relative;
+    padding: 30px 30px 50px 30px;
+    text-align: center;
+    font-size: 50px;
+    font-family: $headerFont;
+    color: $primaryColor;
+  }
+}
+
+@media (max-width: 991px) {
+  .wrapper {
+    justify-content: center;
+  }
+
+  .card {
+    margin: 10px;
+  }
+}
