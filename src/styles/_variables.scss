@@ -1,0 +1,28 @@
+// colors
+
+$primaryColor: #ffffff;
+$secondaryColor: #b8d435;
+$tertiaryColor: #ef3d3c;
+
+// bgColors
+$primaryBgColor: #2e2730;
+$secondaryBgColor: #42244c;
+$tertiaryBgColor: #654284;
+$quaternaryBgColor: #845ea8;
+
+// fonts
+
+@font-face {
+  font-family: "Gramatika";
+  src: url("../assets/fonts/gramatika-font-family-1709401698-0/GramatikaTrial-Regular-BF65dea4c5a77e9.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "LT-Saeda";
+  src: url("../assets/fonts/lt-saeada-font-family-1709400562-0/LTSaeada-Bold-BF65dfe3cae685c.otf")
+    format("opentype");
+}
+
+$primaryFont: "Gramatika";
+$headerFont: "LT-Saeda";
