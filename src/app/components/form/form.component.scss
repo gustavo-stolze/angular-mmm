@@ -146,10 +146,10 @@
   &__header {
     display: flex;
     justify-content: center;
-    padding: 5px 20px;
 
     h1 {
-      font-size: 45px;
+      font-size: 30px;
+      margin-bottom: 20px;
       font-family: $headerFont;
       color: $secondaryColor;
     }
@@ -166,30 +166,37 @@
   }
 
   &__input {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     border-radius: 25px;
     color: $primaryColor;
     background-color: $quaternaryBgColor;
     padding: 10px;
-    input {
-      background-color: $primaryBgColor;
-      margin: 0px 10px;
-      padding: 10px;
-      font-size: 20px;
-      color: $primaryColor;
-      border: none;
-      width: 30dvb;
-      border-radius: 25px;
-      &:focus {
-        outline: none;
+    form {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      button {
+        margin: 10px;
       }
-    }
-    span {
-      margin-right: 10px;
-      margin-left: 10px;
-      font-size: 18px;
+      input {
+        background-color: $primaryBgColor;
+        padding: 10px 30px;
+        margin: 10px;
+        font-size: 17px;
+        color: $primaryColor;
+        border: none;
+        width: 30dvb;
+        border-radius: 25px;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          font-size: 14px;
+        }
+      }
+      span {
+        margin: 10px;
+        font-size: 20px;
+      }
     }
   }
 
