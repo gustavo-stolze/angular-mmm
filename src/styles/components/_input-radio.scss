@@ -1,0 +1,44 @@
+@import "../variables";
+
+.cf-c-input-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+
+  &--cursor--pointer {
+    cursor: pointer;
+  }
+
+  &[expense="true"] {
+    border: 4px solid $tertiaryColor;
+    &::before {
+      background-color: $tertiaryColor;
+    }
+  }
+
+  &[expense="false"] {
+    border: 4px solid $secondaryColor;
+    &::before {
+      background-color: $secondaryColor;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+}

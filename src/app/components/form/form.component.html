@@ -1,0 +1,68 @@
+<div class="wrapper">
+    <form #myForm="ngForm" class="form" (ngSubmit)="addItem()" (keydown)="handleKeysSubmitForm($event)">
+        <div class="expense-radio">
+            <div class="expense-radio__container">
+                <label for="radio-expense">Spent</label>
+                <input type="radio" id="radio-expense" value="expense" class="cf-c-input-radio" expense="true"
+                    name="expense-radio-input" style="cursor: pointer;" required [(ngModel)]="expenseValue" />
+            </div>
+            <div class="expense-radio__container">
+                <label for="radio-no-expense">Gain</label>
+                <input type="radio" id="radio-no-expense" value="!expense" class="cf-c-input-radio" expense="false"
+                    name="expense-radio-input" style="cursor: pointer;" required [(ngModel)]="expenseValue" />
+            </div>
+        </div>
+        <div class="select">
+            <select name="categorySelect" id="categorySelect" class="select__element" [ngModel]="selectedCategory"
+                (ngModelChange)="onSelectChange($event)" required>
+                <option selected value="" class="select__option"></option>
+                <option value="0" class="select__option select__option--add">Adicionar</option>
+                <option *ngFor="let item of categoryList" [value]="(categoryList?.indexOf(item))! + 1"
+                    class="select__option">
+                    {{ item }} </option>
+            </select>
+        </div>
+        <div class="date">
+            <input type="date" name="date-element" class="date__element" required [(ngModel)]="dateValue" />
+        </div>
+        <div class="value">
+            <input type="number" autocomplete="off" class="value__element" required name="input-value"
+                [(ngModel)]="value" max="99999">
+        </div>
+        <div class="submit">
+            <ng-container *ngIf="isEditing.status; then edit; else add"></ng-container>
+            <ng-template #edit><button type="button" appAddButton [disabled]="myForm.invalid || value <= 0"
+                    (click)="saveEdit()">Edit</button>
+                <button type="button" class="button-cancel" (click)="isEditingMethod(false)">
+                    <mat-icon>cancel</mat-icon> </button></ng-template>
+            <ng-template #add><button type="submit" appAddButton
+                    [disabled]="myForm.invalid || value <= 0">Adicionar</button></ng-template>
+        </div>
+    </form>
+</div>
+
+<!-- add category modal -->
+
+<dialog #myModal class="modal" (close)="closeModal()">
+    <div class="modal__header">
+        <h1>Criar Categoria</h1>
+        <mat-icon class="modal__icon modal__icon--cancel" (click)="myModal.close()">cancel</mat-icon>
+    </div>
+    <div class="modal__input">
+        <form method="dialog" #modalForm="ngForm" [noValidate]="false" (submit)="addCategory()">
+            <span>Nome da Categoria</span>
+            <input autocomplete="off" [(ngModel)]="categoryText" name="category" placeholder="Adicione sua categoria!"
+                required minlength="3" maxlength="12" />
+            <button type="submit" appAddButton [disabled]="modalForm.invalid">Adicionar</button>
+        </form>
+    </div>
+    <div class="modal__item" *ngFor="let item of categoryList">
+        <span> {{ item }} </span>
+        <mat-icon class="modal__icon modal__icon--delete" (click)="deleteCategory(item)">delete</mat-icon>
+    </div>
+    <ng-container *ngIf="!categoryList || categoryList.length === 0">
+        <div class="invalid">
+            <span> Sem categorias por aqui... :&#40; </span>
+        </div>
+    </ng-container>
+</dialog>

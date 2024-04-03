@@ -1,7 +1,10 @@
 .main {
-    width: 85%;
-    margin: 0 auto;
-    &__cards {
-        border: 1px solid green;
-    }
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media (max-width: 470px) {
+  .main {
+    width: 95%;
+  }
 }

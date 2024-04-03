@@ -2,3 +2,8 @@
 
 @import "./styles/reset";
 @import "./styles/variables";
+@import "./styles/components/input-radio";
+@import "./styles/components/add-button";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

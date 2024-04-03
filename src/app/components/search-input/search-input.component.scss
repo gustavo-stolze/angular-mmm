@@ -1,0 +1,32 @@
+@import "../../../styles/variables";
+
+.input {
+    margin-top: 20px;
+    background-color: $tertiaryBgColor;
+    display: flex;
+    padding: 12px;
+    border-radius: 25px;
+
+    &__element {
+        width: 85%;
+        margin-left: 10px;
+        background-color: transparent;
+        border: none;
+        color: $primaryColor;
+        font-size: 22px;
+        &::placeholder {
+            color: $primaryColor;
+            opacity: 0.3;
+            font-weight: 100;
+            letter-spacing: 2px;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__icon {
+        color: $primaryColor;
+        font-size: 30px;
+    }
+}

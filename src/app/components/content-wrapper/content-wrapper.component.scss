@@ -1,0 +1,10 @@
+@import '../../../styles/variables';
+
+.wrapper {
+  &__content-section {
+    margin-top: 25px;
+    background-color: $tertiaryBgColor;
+    padding: 20px;
+    border-radius: 20px;
+  }
+}

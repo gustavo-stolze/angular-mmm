@@ -1,0 +1,56 @@
+@import "../../../styles/variables";
+
+.wrapper {
+  background-color: $tertiaryBgColor;
+}
+
+.table {
+  &__row {
+    background-color: $quaternaryBgColor;
+    padding: 8px 0px;
+    border-radius: 25px;
+    display: flex;
+    margin: 8px 0px;
+  }
+
+  &__item {
+    width: 25%;
+    padding: 4px;
+    display: flex;
+    color: $primaryColor;
+    justify-content: center;
+    align-items: center;
+    &--width--small {
+      width: 10%;
+    }
+  }
+
+  &__items-effects {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__icon {
+    color: black;
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+@media (max-width: 635px) {
+  .table {
+    &__row {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: 1;
+      div {
+        width: 100%;
+        margin: 5px 0px;
+      }
+    }
+  }
+}

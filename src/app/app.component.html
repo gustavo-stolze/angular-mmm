@@ -3,7 +3,10 @@
 </header>
 <main class="main">
   <div class="main__cards">
-    <app-cards />
+    <app-cards [listItens]="filteredList" />
   </div>
-  search-form-content
+  <div class="main__wrapper">
+    <app-content-wrapper [listItens]="listItens" [filteredList]="filteredList"
+      (filteredListChange)="updateFilteredList($event)" />
+  </div>
 </main>

@@ -1,0 +1,29 @@
+@import "../variables";
+
+.cf-c-add-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  color: black;
+  background-color: $secondaryColor;
+  border: 2px solid $secondaryColor;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    top: -2px;
+  }
+
+  &:disabled {
+    border: 2px solid $primaryColor;
+    opacity: 0.8;
+    cursor: not-allowed;
+    background-color: $primaryBgColor;
+    color: $primaryColor;
+  }
+}

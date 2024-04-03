@@ -1,14 +1,14 @@
 <div class="wrapper">
     <div class="card">
         <div class="card__header">Entrada</div>
-        <div class="card__value card__value--color--green">0000,00</div>
+        <div class="card__value card__value--color--green"> {{ getGain() | formatPrice }} </div>
     </div>
     <div class="card">
         <div class="card__header">Total</div>
-        <div class="card__value">0000,00</div>
+        <div class="card__value">{{ getBalance() | formatPrice }}</div>
     </div>
     <div class="card">
         <div class="card__header">Saida</div>
-        <div class="card__value card__value--color--red">0000,00</div>
+        <div class="card__value card__value--color--red"> {{ getSpent() | formatPrice }} </div>
     </div>
 </div>

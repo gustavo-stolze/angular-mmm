@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <ng-container *ngIf="filteredList; then listTable; else undefinedList"></ng-container>
+
+    <ng-template #undefinedList>
+        <div class="no-list">
+            <span> Nenhum item encontrado!!! :&#40; </span>
+        </div>
+    </ng-template>
+
+    <ng-template #listTable>
+        <div class="table">
+            <div class="table__row" *ngFor="let item of filteredList">
+                <div class="table__item table__item--width--small"><input type="radio" checked class="cf-c-input-radio"
+                        [attr.expense]="item.expense" />
+                </div>
+                <div class="table__item"> {{ item.category }} </div>
+                <div class="table__item"> {{ item.date | date }} </div>
+                <div class="table__item"> {{ item.value | formatPrice }} </div>
+                <div class="table__item table__item--width--small">
+                    <div class="table__items-effects">
+                        <mat-icon class="table__icon" (click)="isEditingMethod(item)">edit</mat-icon>
+                        <mat-icon class="table__icon" (click)="handleDeleteClick(item.id)">delete</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>

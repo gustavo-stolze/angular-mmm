@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="wrapper__search-input">
+        <app-search-input (inputChange)="onSearchChange($event)" />
+    </div>
+    <div class="wrapper__content-section">
+        <div class="wrapper__form-section" id="formId">
+            <app-form [categoryList]="categoryList" (addItem)="onAddItem($event)" [(isEditing)]="isEditing"
+                (editItem)="onEditItem($event)" />
+        </div>
+        <div class="wrapper__table-section">
+            <app-table [filteredList]="filteredList" [(isEditing)]="isEditing" (deleteItem)="onDeleteItem($event)" />
+        </div>
+    </div>
+</div>
